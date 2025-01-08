@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Global Variable */
+:root{
+    --sideBGColor: #040c15;
+    --themeColor: #00A78E;
+    --iconBGColor: #2C2F3F;
+    --textColor: #353535;
+    --bgColor:#d9f8f2;
+    --lightGreyColor: #f3f5f5;
+    --whiteColor: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--textColor);
+    background-color: var(--sideBGColor);
+    padding: 20px 100px;
+}
+
+header {
+    margin: 0 auto;
+    /* max-width: 900px; */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 50px;
+    display: flex;
+    margin-left: 180px;
+    color: var(--themeColor);
+    text-transform: uppercase;
+}
+
+header p {
+    float: right;
+    font-size: 18px;
+    color: var(--themeColor);
+}
+
+header a {
+    font-size: 14px;
+}
+
+header a:hover{
+    color: var(--themeColor);
+}
+
+button#download-cv-btn {
+    position: fixed; /* Fixes the button position relative to the viewport */
+    top: 20px; /* Distance from the top of the page */
+    right: 20px; /* Distance from the right side of the page */
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button#download-cv-btn:hover {
+    background-color: var(--themeColor);
+    color: var(--whiteColor);
+}
+
+.navbar {
+    margin: 0 auto 10px;
+    background: var(--iconBGColor);
+    padding: 10px;
+    /* max-width: 1000px; */
+    border-radius: 5px;
+}
+
+.navbar ul {
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 50px;
+}
+
+.navbar li {
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+li a span {
+    display: inline; /* Ensure the text is shown */
+    color: var(--whiteColor);
+}
+
+.navbar a {
+    color: var(--whiteColor);
+    text-decoration: none;
+    padding: 10px 10px;
+    transition: background 0.3s;
+}
+
+.navbar a i {
+    font-size: 18px;
+    color: var(--themeColor);
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--themeColor);
+}
+
+main {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    background: var(--bgColor);
+    padding: 38px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(43, 38, 38, 0.479);
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+/* Hide content of sections by default */
+section > *:not(h2) {
+    display: none;
+}
+
+/* Show content for sections with the 'expanded' class */
+section.expanded > *:not(h2),
+section.active > *:not(h2) {
+    display: block;
+}
+
+/* Style for Toggle Button */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--themeColor);
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.collapsed {
+    transform: rotate(-90deg);
+}
+
+#about.active h2 {
+    font-size: 25px;
+}
+
+section h2 {
+    font-size: 20px;
+    color: var(--sideBGColor);
+    border-bottom: 4px solid var(--themeColor);
+    border-bottom-style: groove;
+    margin-bottom: 10px;
+}
+
+#about p {
+    font-size: 14px;
+}
+
+ul {
+    color: var(--sideBGColor);
+    font-size: 12px;
+    font-weight: 500;
+    list-style-type: square;
+    margin-left: 60px;
+}
+
+#skills ul {
+    font-weight: 600;
+}
+
+li span {
+    font-style: italic;
+    font-weight: 100;
+    color: var(--textColor);
+}
+
+li:hover span {
+    color: var(--themeColor);
+    cursor: pointer;
+}
+
+#experience p {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--themeColor);
+}
+
+.content {
+    /* border-bottom: 2px solid var(--textColor); */
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.content .date {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Push items to the ends */
+}
+
+.content .year {
+    display: none;
+}
+
+.content .company {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Push items to the ends */
+}
+
+.content .tools {
+    display: inline;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.content .tools span {
+    font-style: italic;
+    color: var(--themeColor);
+}
+
+.content .uni {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Push items to the ends */
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--themeColor);
+}
+
+.content .university {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--textColor);
+}
+
+
+/* Scroll-to-Top */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--themeColor);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: var(--whiteColor);
+    display: none;
+    cursor: pointer;
+}
+
+.scroll-to-top:hover {
+    color: var(--whiteColor);
+    background: var(--iconBGColor);
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        padding: 25px 10px;
+        max-width: 350px;
+    }
+    header {
+        max-width: 300px;
+        margin-bottom: 0;
+    }
+    header h1 {
+        font-size: 35px;
+        margin: 0;
+    }
+    header p {
+        display: none;
+    }
+    header a {
+        font-size: 8px;
+    }
+
+    button#download-cv-btn {
+        display: none;
+    }
+
+    .navbar {
+        margin: 10px auto;
+        padding: 5px;
+        max-width: 300px;
+    }
+    
+    .navbar ul {
+        margin: 0;
+        gap: 0;
+    }
+    
+    .navbar li {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    li a span {
+        display: none; /* Hide the text initially */
+    }
+      
+    li a:hover span {
+        display: inline; /* Show the text on hover */
+    }
+    
+    .navbar a i {
+        font-size: 20px;
+    } 
+
+    main {
+        max-width: 350px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .content {
+        /* border-bottom: 2px solid var(--textColor); */
+        /* margin-bottom: 30px; */
+        /* margin-left: 10px; */
+    }
+    ul {
+        margin-left: 42px;
+        font-size: 12px;
+    }
+    .content .date {
+        display: none;
+    }
+    .content .year {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-between; /* Push items to the ends */
+    }
+    .content .uni {
+        display: none;
+    }
+    .content .university {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-between; /* Push items to the ends */
+        font-size: 14px;
+        font-weight: 500;
+        font-style: italic;
+        color: var(--themeColor);
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    .scroll-to-top {
+        display: none;
+    }
+}
